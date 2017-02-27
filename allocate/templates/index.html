@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <title>Home</title>
+     <meta charset="utf-8">
+     <meta name = "format-detection" content = "telephone=no" />
+     <link rel="icon" href="{% static 'images/favicon.ico' %}">
+     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+     <link rel="stylesheet" href="{% static 'css/camera.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/component.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/tooltipster.css' %}" />
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/jquery-migrate-1.2.1.js' %}"></script>
+     <script src="{% static 'js/script.js' %}"></script> 
+     <script src="{% static 'js/superfish.js' %}"></script>
+     <script src="{% static 'js/jquery.ui.totop.js' %}"></script>
+     <script src="{% static 'js/jquery.equalheights.js' %}"></script>
+     <script src="{% static 'js/jquery.mobilemenu.js' %}"></script>
+     <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+      <script src="{% static 'js/jquery.tooltipster.js' %}"></script>
+     <script src="{% static 'js/camera.js' %}"></script>
+     <!--[if (gt IE 9)|!(IE)]><!-->
+     <script src="{% static 'js/jquery.mobile.customized.min.js' %}"></script>
+     <!--<![endif]-->
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+     <script>
+       $(document).ready(function(){
+        jQuery("#camera_wrap").camera({
+            loader: "pie",
+            pagination: true ,
+            minHeight: "200",
+            thumbnails: true,
+            height: "40.85106382978723%",
+            caption: true,
+            navigation: true,
+            fx: "mosaic"
+          });
+        $().UItoTop({ easingType: "easeOutQuart" });
+               $(".tooltip").tooltipster();
+
+        });
+     </script>
+
+    <!--[if lt IE 9]>
+       <div style=" clear: both; text-align:center; position: relative;">
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+         </a>
+      </div>
+      <script src="js/html5shiv.js"></script>
+      <link rel="stylesheet" media="screen" href="css/ie.css">
+
+
+    <![endif]-->
+     </head>
+     
+     <body class="page1" id="top">
+     
+<!--==============================header=================================--> 
+<header>  
+  <div class="container_12">
+    <div class="grid_12">
+        <h1>
+        <a href="{% url 'index' %}">
+          <img src="{% static 'images/logo.png'%}" alt="">
+        </a>
+      </h1>
+        <div class="menu_block ">
+          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+            <ul class="sf-menu">
+                 <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                 <li><a href="{% url 'apply' %}">Apply</a></li>
+                 <li><a href="{% url 'allocate' %}">Allocation</a></li>
+                 <li><a href="/admin">Admin</a></li>
+               </ul>
+            </nav>
+           <div class="clear"></div>
+        </div>
+      </div>      
+   </div>
+</header>
+      <div class="center">
+        <h4>Welcome!</h4>
+	<span> <b> House Allocation System  </b> </span>
+      </div>
+<div class="container_12">
+  <div class="grid_12">
+    <div class="slider_wrapper ">
+       <div class="camera_wrap" id="camera_wrap">
+            <div data-thumb="images/thumb.png" data-src="{% static 'images/slideimage2.JPG' %}">
+                <div class="caption fadeFromBottom">
+                  Clever interior.
+                </div>
+            </div>
+            <div data-thumb="images/thumb1.jpg" data-src="{% static 'images/slideimage3.JPG' %}">
+                <div class="caption fadeFromBottom">
+                  Improved home.
+                </div>
+            </div>
+            <div data-thumb="images/thumb2.png" data-src="{% static 'images/slideimage2.JPG' %}">
+                <div class="caption fadeFromBottom">
+                  Premium design.
+                </div>
+            </div>
+            <div data-thumb="images/thumb3.png" data-src="{% static 'images/slideimage3.JPG' %}">
+                <div class="caption fadeFromBottom">
+                  Creative looks.
+                </div>
+            </div>           
+        </div>
+    </div>
+  </div>
+</div>
+<div class="page1_block">
+  <div class="container_12">
+    <div class="grid_12">
+        We offer you the best design solutions to make your home unique .
+    </div>
+  </div>
+</div>
+<!--==============================Content=================================-->
+
+  <div class="hor"></div>
+  <div class="container_12">
+    <div class="grid_12 center">
+      <h3>Bayero University Kano House Allocation System.</h3>
+    </div>
+   	<p>
+		The housing unit is a section of the university registry department. It is concerned with the up keep of the university quarters which include allocation of houses to staff maintenance, checking in and checking out of staff members, The provision of houses for staff in Bayero University began with the building of Ab1 to Ab20 which was during the development of Abdullahi Bayero College. This carried out by the maintenance unit of the A.B.U estate department that was established. It was to look after the new buildings and the senior staff houses. Ab1 to Ab20 was constructed between 1950 and 1961 by the northern Nigeria government as part of the extension of Kano, Nassarawa Government reservation area. It was later followed by the erection of other senior staff houses in the old site. It was in 1980 that the core buildings of the new site of the university were completed. These include the academic and administrative buildings, junior and senior staff quarters and student hostels. 
+	</p>
+    </div>
+  </div>
+</div>
+<!--==============================footer=================================-->
+<footer>   
+    <div class="container_12">
+        </div>
+        <div class="copy">
+        Housing <br> Website designed by TimTech4u </a>
+    </div>  
+</footer>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/thumbnailGridEffects.js' %}"></script>
+
+</body>
+</html>
+

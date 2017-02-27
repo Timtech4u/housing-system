@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <title>Gallery</title>
+     <meta charset="utf-8">
+     <meta name = "format-detection" content = "telephone=no" />
+     <link rel="icon" href="{% static 'images/favicon.ico' %}">
+     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+     <link rel="stylesheet" href="{% static 'css/touchTouch.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/tooltipster.css' %}" />
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/jquery-migrate-1.2.1.js' %}"></script>
+     <script src="{% static 'js/script.js' %}"></script> 
+     <script src="{% static 'js/superfish.js' %}"></script>
+     <script src="{% static 'js/jquery.ui.totop.js' %}"></script>
+     <script src="{% static 'js/jquery.equalheights.js' %}"></script>
+     <script src="{% static 'js/jquery.mobilemenu.js' %}"></script>
+     <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+      <script src="{% static 'js/jquery.tooltipster.js' %}"></script>
+     <script src="{% static 'js/touchTouch.jquery.js' %}"></script>
+     <script>
+       $(document).ready(function(){
+        $(".gallery a.gal").touchTouch();
+        $().UItoTop({ easingType: "easeOutQuart" });
+        $(".tooltip").tooltipster();
+        });
+     </script>
+
+     <!--[if lt IE 9]>
+       <div style=" clear: both; text-align:center; position: relative;">
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+         </a>
+      </div>
+      <script src="js/html5shiv.js"></script>
+      <link rel="stylesheet" media="screen" href="css/ie.css">
+
+
+    <![endif]-->
+     </head>
+     
+     <body class="" id="top">
+     
+<!--==============================header=================================--> 
+<header>  
+  <div class="container_12">
+    <div class="grid_12">
+        <h1>
+        <a href="{% url 'index' %}">
+          <img src="{% static 'images/logo.png'%}" alt="">
+        </a>
+      </h1>
+        <div class="menu_block ">
+          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+            <ul class="sf-menu">
+                 <li><a href="{% url 'index' %}">Home</a></li>
+                 <li><a href="{% url 'apply' %}">Apply</a></li>
+                 <li><a href="{% url 'allocate' %}">Allocation</a></li>
+                 <li><a href="/admin">Admin</a></li>
+               </ul>
+            </nav>
+           <div class="clear"></div>
+        </div>
+      </div>      
+   </div>
+</header>
+<!--==============================Content=================================-->
+<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - March 10, 2014!</div>
+  <div class="container_12">
+    <div class="grid_3">
+      <h4>Waiting Houses</h4>
+      <ul class="list">
+	{% for house in house_wai %}
+        <li><a href="#"> {{house.status}} </a></li>
+	<li><a href="#"> {{house.house_code}} </a></li>
+        <li><a href="#"> {{house.house_type}} </a></li>
+	<li><a href="#"> {{house.address}} </a></li>
+        <li><a href="#"> {{house.no_of_rooms}} </a></li>
+	<li><a href="#"> {{house.years_of_lease}} </a></li>
+	<hr>	
+	{% endfor %}
+      </ul>
+    </div>
+    <div class="grid_3">
+      <h4>Allocated Houses</h4>
+      <ul class="list">
+	{% for house in house_ala %}
+        <li><a href="#"> {{house.status}} </a></li>
+	<li><a href="#"> {{house.house_code}} </a></li>
+        <li><a href="#"> {{house.house_type}} </a></li>
+	<li><a href="#"> {{house.address}} </a></li>
+        <li><a href="#"> {{house.no_of_rooms}} </a></li>
+	<li><a href="#"> {{house.years_of_lease}} </a></li>
+	<hr>	
+	{% endfor %}
+      </ul>
+    </div>
+    <div class="grid_3">
+      <h4>De-Allocated Houses</h4>
+      <ul class="list">
+	{% for house in house_dea %}
+        <li><a href="#"> {{house.status}} </a></li>
+	<li><a href="#"> {{house.house_code}} </a></li>
+        <li><a href="#"> {{house.house_type}} </a></li>
+	<li><a href="#"> {{house.address}} </a></li>
+        <li><a href="#"> {{house.no_of_rooms}} </a></li>
+	<li><a href="#"> {{house.years_of_lease}} </a></li>
+	<hr>	
+	{% endfor %}
+      </ul>  
+  </div>
+
+     <div class="grid_3">
+      <h4>Users</h4>
+      <ul class="list">
+	{% for user in users %}
+        <li><a href="#"> {{user.house}} </a></li>
+	<li><a href="#"> {{user.first_name}} </a></li>
+        <li><a href="#"> {{user.second_name}} </a></li>
+	<li><a href="#"> {{user.position}} </a></li>
+        <li><a href="#"> {{user.marital_status}} </a></li>
+	<li><a href="#"> {{user.tel_number}} </a></li>
+	<hr>	
+	{% endfor %}
+      </ul>   
+  </div>
+
+</div>
+<!--==============================footer=================================-->
+<footer>   
+    <div class="container_12">
+        </div>
+        <div class="copy">
+        Housing <br> Website designed by TimTech4u </a>
+    </div>  
+</footer>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/thumbnailGridEffects.js' %}"></script>
+
+</body>
+</html>
